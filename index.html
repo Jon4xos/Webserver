@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/style.css">
+  <title>Daten für Jonas</title>
+</head>
+
+<body>
+<header>
+  Daten für Jonas
+</header>
+
+<h2>Daten senden</h2>
+
+<form action="receiver.php" method="POST">
+
+  <label for="vorname">Vorname:</label><br>
+  <input type="text" id="vorname" name="vorname" required><br><br>
+
+  <label for="nachname">Nachname:</label><br>
+  <input type="text" id="nachname" name="nachname" required><br><br>
+
+  <label for="wohnort">Wohnort:</label><br>
+  <input type="text" id="wohnort" name="wohnort" required><br><br>
+
+  <label for="zahl">Alter:</label><br>
+  <input type="number" id="zahl" name="zahl" required><br><br>
+
+  <input type="submit" value="Senden">
+</form>
+
+</body>
+</html>
+
