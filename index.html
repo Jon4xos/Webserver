@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script defer type="text/javascript" src='script.js'></script>
   <title>Daten für Jonas</title>
 </head>
 
@@ -13,7 +15,7 @@
 
 <h2>Daten senden</h2>
 
-<form action="receiver.php" method="POST">
+<form id="Formular">
 
   <label for="vorname">Vorname:</label><br>
   <input type="text" id="vorname" name="vorname" required><br><br>
@@ -28,6 +30,9 @@
   <input type="number" id="zahl" name="zahl" required><br><br>
 
   <input type="submit" value="Senden">
+
+  <div id="responseMessage"></div>
+
 </form>
 
 </body>

@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const data = {
             vorname: form.elements['vorname'].value,
             nachname: form.elements['nachname'].value,
-            email: form.elements['email'].value,
-            nachricht: form.elements['nachricht'].value,
+            wohnort: form.elements['wohnort'].value,
             zahl: form.elements['zahl'].value,
         };
 

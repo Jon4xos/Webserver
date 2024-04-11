@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer type="text/javascript" src='register.js'></script>
+    <title>Register</title>
+</head>
+<body>
+<h1>Register</h1>
+<form id="registerForm">
+    <label for="username">Benutzername:</label><br>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="password">Passwort:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+    <input type="submit" value="Registrieren"><br>
+    <button onclick="window.location.href='/login_page.html'">Sign in</button><br><br>
+</form>
+<div id="errorMessage" style="color: red;"></div>
+</body>
+</html>

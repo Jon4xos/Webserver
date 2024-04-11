@@ -5,7 +5,7 @@ const fs = require('fs');
 const cors = require('cors'); //CORS für Fehler in der Zugriffskontrolle
 
 const app = express()
-const port = 500; // Port für HTTP-Server
+const port = 5000; // Port für HTTP-Server
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
@@ -87,25 +87,25 @@ connection.connect((err) => {
 });
 
 app.post('/saveToDB', (req, res) => {
-  const {vorname, nachname, email, nachricht, zahl} = req.body;
+  const {vorname, nachname, wohnort, zahl} = req.body;
 
-  console.log("Got data from the form:", vorname, nachname, email, nachricht, zahl);
+  console.log("Got data from the form:", vorname, nachname, wohnort, zahl);
 
-  const tableQuery = 'CREATE TABLE IF NOT EXISTS formular_daten (vorname VARCHAR(50), nachname VARCHAR(50), email VARCHAR(100),nachricht VARCHAR(255), zahl INT(11))';
-  const insertQuery = 'INSERT INTO formular_daten (vorname,nachname, email,nachricht, zahl) VALUES (?, ?, ?, ?, ?)';//Wären die Values nicht gegeben, so könnte man SQL-Injection betreiben
+  const tableQuery = 'CREATE TABLE IF NOT EXISTS infos (vorname VARCHAR(255), nachname VARCHAR(255), wohnort VARCHAR(255), zahl INT(3))';
+  const insertQuery = 'INSERT INTO infos (vorname, nachname, wohnort, zahl) VALUES (?, ?, ?, ?)';//Wären die Values nicht gegeben, so könnte man SQL-Injection betreiben
 
   connection.query(tableQuery);
-  connection.query(insertQuery, [vorname, nachname, email, nachricht, zahl], (error) => {
+  connection.query(insertQuery, [vorname, nachname, wohnort, zahl], (error) => {
     if (error) {
       console.error('Error inserting data into database:', error);
-      res.status(500).send('Error inserting data into database');
+      res.status(5000).send('Error inserting data into database');
       return;
     }
     res.send('Data uploaded successfully');
 
   });
 
-  fs.appendFile('formular_daten.txt', `${vorname},${nachname}, ${email}, ${nachricht}, ${zahl}\n`, (error) => {
+  fs.appendFile('formular_daten.txt', `${vorname},${nachname}, ${wohnort}, ${zahl}\n`, (error) => {
     if (error) {
       console.error('Error writing to file:', error);
       return;
