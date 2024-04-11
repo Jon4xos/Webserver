@@ -4,7 +4,7 @@ const https = require('https');
 const fs = require('fs');
 const cors = require('cors'); //CORS für Fehler in der Zugriffskontrolle
 
-const app = express();
+const app = express()
 const port = 500; // Port für HTTP-Server
 
 app.get('/', (req, res) => {
