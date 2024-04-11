@@ -35,7 +35,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'webserver',
+  database: 'jonasdaten',
 });
 
 // Annahme: Funktion zum Authentifizieren von Benutzern
@@ -105,7 +105,7 @@ app.post('/saveToDB', (req, res) => {
 
   });
 
-  fs.appendFile('formular_daten.txt', `${vorname},${nachname}, ${wohnort}, ${zahl}\n`, (error) => {
+  fs.appendFile('infos.txt', `${vorname},${nachname}, ${wohnort}, ${zahl}\n`, (error) => {
     if (error) {
       console.error('Error writing to file:', error);
       return;
