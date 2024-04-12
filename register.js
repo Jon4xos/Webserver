@@ -22,3 +22,4 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         // Zeige die Fehlermeldung
         document.getElementById('errorMessage').innerText = data;
     }
+});
